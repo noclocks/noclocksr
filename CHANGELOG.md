@@ -12,6 +12,7 @@
 - Add CHANGELOG
 - Add vignettes
 - Add functions man pages
+- Add badge for GHA to README
 
 ### Features
 
@@ -22,6 +23,10 @@
 - Add rmarkdown template
 - Add image assets
 - Add examples
+
+### Miscellaneous Tasks
+
+- Autopublish 2024-02-07T20:16:45Z
 
 ### Init
 
