@@ -1,0 +1,80 @@
+---
+title: "Template Title"
+author: "Your Name"
+date: "The Date"
+output: 
+    html_document:
+        theme: cosmo
+        highlight: tango
+        toc: true
+        toc_depth: 3
+        toc_float: true
+        number_sections: true
+        fig_caption: true
+        df_print: paged
+        code_folding: show
+        code_download: true
+        code_copy: true
+        toc_float:
+            collapsed: false
+            smooth_scroll: true
+            position: right
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+> Overview
+
+## Load Data
+
+```{r load_data}
+# Load Data
+```
+
+## Data Processing
+
+```{r data_processing}
+# Data Processing
+```
+
+## Data Visualization
+
+```{r dataviz}
+# Data Visualization
+
+```
+
+## Analysis
+
+```{r analysis}
+
+```
+
+## Conclusion
+
+```{r conclusion}
+
+```
+
+***
+
+## References
+
+```{r references}
+
+```
+
+## Session Info
+
+```{r session_info}
+sessioninfo::session_info()
+```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md]().
+
