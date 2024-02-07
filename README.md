@@ -11,6 +11,8 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 WIP](https://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![Generate
 CHANGELOG.md](https://github.com/noclocks/noclocksR/actions/workflows/changelog.yml/badge.svg)](https://github.com/noclocks/noclocksR/actions/workflows/changelog.yml)
+[![pkgdown](https://github.com/noclocks/noclocksR/actions/workflows/pkgdown.yaml/badge.svg)](https://github.com/noclocks/noclocksR/actions/workflows/pkgdown.yaml)
+[![pages-build-deployment](https://github.com/noclocks/noclocksR/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/noclocks/noclocksR/actions/workflows/pages/pages-build-deployment)
 <!-- badges: end -->
 
 The goal of noclocksR is to …
