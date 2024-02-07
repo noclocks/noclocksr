@@ -14,6 +14,7 @@
 - Add functions man pages
 - Add badge for GHA to README
 - Add pkgdown site
+- Update badges for README with new GHA
 
 ### Features
 
@@ -30,6 +31,7 @@
 
 - Autopublish 2024-02-07T20:16:45Z
 - Autopublish 2024-02-07T20:17:46Z
+- Autopublish 2024-02-07T20:20:12Z
 
 ### Testing
 
