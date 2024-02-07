@@ -1,2 +1,8 @@
 ^noclocksR\.Rproj$
 ^\.Rproj\.user$
+^cliff\.toml$
+^CHANGELOG\.md$
+^README\.Rmd$
+^data-raw$
+^dev$
+^examples$
