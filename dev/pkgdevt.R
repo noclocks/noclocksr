@@ -97,3 +97,11 @@ usethis::use_rmarkdown_template(
 
 usethis::use_vignette("noclocksR")
 usethis::use_vignette("styleguide")
+
+usethis::use_pkgdown()
+usethis::use_pkgdown_github_pages()
+
+
+usethis::use_testthat()
+usethis::use_test("color_palette")
+usethis::use_test("shiny_resume")
