@@ -19,6 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![Project Status: WIP](https://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+[![Generate CHANGELOG.md](https://github.com/noclocks/noclocksR/actions/workflows/changelog.yml/badge.svg)](https://github.com/noclocks/noclocksR/actions/workflows/changelog.yml)
 <!-- badges: end -->
 
 The goal of noclocksR is to ...
