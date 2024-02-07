@@ -6,3 +6,7 @@
 ^data-raw$
 ^dev$
 ^examples$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^\.github$
