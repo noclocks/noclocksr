@@ -19,6 +19,21 @@
     <loc>https://noclocks.github.io/noclocksR/authors.html</loc>
   </url>
   <url>
+    <loc>https://noclocks.github.io/noclocksR/coverage/codecoverage_explanation.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/coverage/coverage.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/gitdown/404.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/gitdown/gitbook-for-noclocksr.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/gitdown/section-issues.html</loc>
+  </url>
+  <url>
     <loc>https://noclocks.github.io/noclocksR/index.html</loc>
   </url>
   <url>
@@ -35,5 +50,35 @@
   </url>
   <url>
     <loc>https://noclocks.github.io/noclocksR/reference/shiny_resume_page.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/404.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/aggregated-failures-and-errors.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/aggregated-skipped.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/aggregated-warnings.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/global-results-for-package-noclocksr.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/how-to-read-this-report.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/index.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/test-color_palette.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/test-shiny_resume.html</loc>
+  </url>
+  <url>
+    <loc>https://noclocks.github.io/noclocksR/testdown/testdown-report-for-noclocksr.html</loc>
   </url>
 </urlset>
