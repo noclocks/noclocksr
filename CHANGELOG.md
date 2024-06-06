@@ -3,6 +3,10 @@
 
 ## [Unreleased]
 
+### Configuration
+
+- Add cache to data-raw
+
 ### Data
 
 - Add data-raw/color_palette
@@ -26,12 +30,17 @@
 - Add image assets
 - Add examples
 - Add pkgdown GHA
+- Add client demo dataset
+- Add gitignore templates data
+- Add R package data
+- New functions
 
 ### Miscellaneous Tasks
 
 - Autopublish 2024-02-07T20:16:45Z
 - Autopublish 2024-02-07T20:17:46Z
 - Autopublish 2024-02-07T20:20:12Z
+- Autopublish 2024-02-07T20:22:09Z
 
 ### Testing
 
