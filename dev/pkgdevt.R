@@ -10,11 +10,24 @@
 
 # libraries ---------------------------------------------------------------
 
-library(devtools)
-library(usethis)
-library(roxygen2)
+require(devtools)
+require(usethis)
+require(roxygen2)
+require(testthat)
+require(fusen)
+require(lozen)
+require(attachment)
+require(gitdown)
+require(testdown)
 
+# pak::pak(c("covr", "codemetar", "pkgdown", "pagedown", "bookdown", "rmarkdown"))
+# pak::pak("ThinkR-open/lozen")
+# pak::pak("ThinkR-open/fusen")
+# pak::pak("ThinkR-open/gitdown")
+# pak::pak("ThinkR-open/testdown")
 
+usethis::use_data_raw("gitignore_templates")
+usethis::use_data_raw("client_demo_data")
 
 # initialize --------------------------------------------------------------
 
