@@ -1,0 +1,582 @@
+--- 
+title: "{gitdown} report"
+author: "John Doe"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+description: "{gitdown} report for package noclocksR"
+---
+# Gitbook for noclocksR{-} 
+
+
+Done on: 2024-06-13 14:21:23.94586
+
+
+
+
+
+# Section: Issues
+## Summary table
+
+|Issues            |Commits links                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|:-----------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|No related issues |[Initial commit](#issues-na-bb652127908ac3b007d3c0fc0f12dc0918c24a5f), [Initial commit](#issues-na-2dae785bf51c3a1b36706a6d45bf1354aeb40387), [init: initialize changelog and GHA](#issues-na-45080da94c36ae8bf1462d7ebe8a095b7c8ea4a2), [init: initialize ignore files](#issues-na-7b633ff1f42a74e8b53e7f2704d542bd2b230470), [doc: add CHANGELOG](#issues-na-a7d7f1b57636b85e33c9606fc35da8cba03bc11d), [data: add data-raw/color-palette](#issues-na-fdb9d5946dde8c52e47945f565a2cf4cea899fca), [init: initialize R package structure](#issues-na-ece475cf4dacef956cc4b6b889de4562c621fba1), [feat: add colors R](#issues-na-6ef96943f9a44fe0d7b1d69e51c5377ce9e21dd8), [feat: add shiny-resume functions](#issues-na-e2b46603814eb6eb9277ac4d0802b71571472673), [docs: add vignettes](#issues-na-0fab7a488957f268a71ed834d6ce2553dfb2eed9), [docs: add functions man pages](#issues-na-438548ab4022f680baa18dd90e4d9e1367900c85), [feat: add assets for htmldependency on shiny-resume](#issues-na-193fafd2d0ceacc98600ef4407781dfc976dbe68), [feat: add demo resume app](#issues-na-667e9f7e71287702d24f57d0d21fb9b4654cf5fd), [feat: add rmarkdown template](#issues-na-d2741eb74684032557be8bf00be32fe117fee79e), [feat: add image assets](#issues-na-37027908e0349d72abc28781d8f41bcf5f7be8d9), [feat: add examples](#issues-na-6a93b5d1e18876fdfcc9b3d69b55468f041c28d7), [chore: autopublish 2024-02-07T20:16:45Z](#issues-na-8c8f295eeee5d34cfca94c567d926fa10297497d), [docs: add badge for GHA to README](#issues-na-3abf1985732e9e546cdfc2dadeb9e22e9ceec35c), [Merge branch 'main' of github.com:noclocks/noclocksR](#issues-na-9a8418f9db1bf4436cb4c83961904809a788e4bd), [chore: autopublish 2024-02-07T20:17:46Z](#issues-na-b368b432c8f8f9876d5ff7df7d8ca37f13a7c6b2), [feat: add pkgdown GHA](#issues-na-93cf2a58a987d51cc24c782ecba464803706604a), [docs: add pkgdown site](#issues-na-7e04dbb3004756660d2f990f2a1937ebf55ac5f4), [init: update description deps](#issues-na-0d2e09433cd4f5ec71eaddaaadb9c0feca40b39c), [init: update pkgdevt](#issues-na-0e6b5d99405cdd3893d97bc2970a7712929a4d54), [init: update ignore files](#issues-na-ee3faa8c559bdaf8002a07c9e1553f5d97ed8352), [test: add tests](#issues-na-64563da9a636428ba8e896bd06cd979a5ad5960b), [Merge branch 'main' of github.com:noclocks/noclocksR](#issues-na-4783708a36209e65f7bb63575055715512e169b3), [chore: autopublish 2024-02-07T20:20:12Z](#issues-na-bb6ec34f04673de2f586573bd47fc440abfbe142), [docs: update badges for README with new GHA](#issues-na-d40be7921af266e8a3b409493c5aad4d9e160634), [Merge branch 'main' of github.com:noclocks/noclocksR](#issues-na-1b9d7f8006b40681152ef4faf598169c983e9587), [chore: autopublish 2024-02-07T20:22:09Z](#issues-na-cbeb4cf4749afee2356eddce309c737e8eba3d4a), [config: add cache to data-raw](#issues-na-9079f1392229845fff73444384d389ae4eb3435e), [feat: add client demo dataset](#issues-na-7968bab641d5f6955583fa90567e5fb00329fa9b), [feat: add gitignore templates data](#issues-na-5b9cdfba1f1b9575b3e24acf096232494ac4098d), [feat: add R package data](#issues-na-e2f05748c7e973f9a66d131bd0db96350e80b955), [feat: new functions](#issues-na-de68b5f1ab8a0e4084282cffd5e85a661415b942), [update](#issues-na-2fa7575830c15f19cb06ab6818cb6564e0d79be0)|
+
+## Issue: No related issues{#issues-na}
+
+### commit: Initial commit{#issues-na-bb652127908ac3b007d3c0fc0f12dc0918c24a5f}
+
+- Commit number: bb652127908ac3b007d3c0fc0f12dc0918c24a5f
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 18:39:16
+- Message content:
+
+```
+Initial commit
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: Initial commit{#issues-na-2dae785bf51c3a1b36706a6d45bf1354aeb40387}
+
+- Commit number: 2dae785bf51c3a1b36706a6d45bf1354aeb40387
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 18:42:24
+- Message content:
+
+```
+Initial commit
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: init: initialize changelog and GHA{#issues-na-45080da94c36ae8bf1462d7ebe8a095b7c8ea4a2}
+
+- Commit number: 45080da94c36ae8bf1462d7ebe8a095b7c8ea4a2
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:11:15
+- Message content:
+
+```
+init: initialize changelog and GHA
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: init: initialize ignore files{#issues-na-7b633ff1f42a74e8b53e7f2704d542bd2b230470}
+
+- Commit number: 7b633ff1f42a74e8b53e7f2704d542bd2b230470
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:11:26
+- Message content:
+
+```
+init: initialize ignore files
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: doc: add CHANGELOG{#issues-na-a7d7f1b57636b85e33c9606fc35da8cba03bc11d}
+
+- Commit number: a7d7f1b57636b85e33c9606fc35da8cba03bc11d
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:11:32
+- Message content:
+
+```
+doc: add CHANGELOG
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: data: add data-raw/color-palette{#issues-na-fdb9d5946dde8c52e47945f565a2cf4cea899fca}
+
+- Commit number: fdb9d5946dde8c52e47945f565a2cf4cea899fca
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:11:44
+- Message content:
+
+```
+data: add data-raw/color_palette
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: init: initialize R package structure{#issues-na-ece475cf4dacef956cc4b6b889de4562c621fba1}
+
+- Commit number: ece475cf4dacef956cc4b6b889de4562c621fba1
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:12:23
+- Message content:
+
+```
+init: initialize R package structure
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add colors R{#issues-na-6ef96943f9a44fe0d7b1d69e51c5377ce9e21dd8}
+
+- Commit number: 6ef96943f9a44fe0d7b1d69e51c5377ce9e21dd8
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:12:36
+- Message content:
+
+```
+feat: add colors R
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add shiny-resume functions{#issues-na-e2b46603814eb6eb9277ac4d0802b71571472673}
+
+- Commit number: e2b46603814eb6eb9277ac4d0802b71571472673
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:12:45
+- Message content:
+
+```
+feat: add shiny_resume functions
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: docs: add vignettes{#issues-na-0fab7a488957f268a71ed834d6ce2553dfb2eed9}
+
+- Commit number: 0fab7a488957f268a71ed834d6ce2553dfb2eed9
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:12:54
+- Message content:
+
+```
+docs: add vignettes
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: docs: add functions man pages{#issues-na-438548ab4022f680baa18dd90e4d9e1367900c85}
+
+- Commit number: 438548ab4022f680baa18dd90e4d9e1367900c85
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:13:04
+- Message content:
+
+```
+docs: add functions man pages
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add assets for htmldependency on shiny-resume{#issues-na-193fafd2d0ceacc98600ef4407781dfc976dbe68}
+
+- Commit number: 193fafd2d0ceacc98600ef4407781dfc976dbe68
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:13:58
+- Message content:
+
+```
+feat: add assets for htmldependency on shiny_resume
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add demo resume app{#issues-na-667e9f7e71287702d24f57d0d21fb9b4654cf5fd}
+
+- Commit number: 667e9f7e71287702d24f57d0d21fb9b4654cf5fd
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:14:09
+- Message content:
+
+```
+feat: add demo resume app
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add rmarkdown template{#issues-na-d2741eb74684032557be8bf00be32fe117fee79e}
+
+- Commit number: d2741eb74684032557be8bf00be32fe117fee79e
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:14:18
+- Message content:
+
+```
+feat: add rmarkdown template
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add image assets{#issues-na-37027908e0349d72abc28781d8f41bcf5f7be8d9}
+
+- Commit number: 37027908e0349d72abc28781d8f41bcf5f7be8d9
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:14:31
+- Message content:
+
+```
+feat: add image assets
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add examples{#issues-na-6a93b5d1e18876fdfcc9b3d69b55468f041c28d7}
+
+- Commit number: 6a93b5d1e18876fdfcc9b3d69b55468f041c28d7
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:14:37
+- Message content:
+
+```
+feat: add examples
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: chore: autopublish 2024-02-07T20:16:45Z{#issues-na-8c8f295eeee5d34cfca94c567d926fa10297497d}
+
+- Commit number: 8c8f295eeee5d34cfca94c567d926fa10297497d
+- Author: github-actions[bot] ; E-mail: github-actions[bot]@users.noreply.github.com
+- Date: 2024-02-07 20:16:45
+- Message content:
+
+```
+chore: autopublish 2024-02-07T20:16:45Z
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: docs: add badge for GHA to README{#issues-na-3abf1985732e9e546cdfc2dadeb9e22e9ceec35c}
+
+- Commit number: 3abf1985732e9e546cdfc2dadeb9e22e9ceec35c
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:17:22
+- Message content:
+
+```
+docs: add badge for GHA to README
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: Merge branch 'main' of github.com:noclocks/noclocksR{#issues-na-9a8418f9db1bf4436cb4c83961904809a788e4bd}
+
+- Commit number: 9a8418f9db1bf4436cb4c83961904809a788e4bd
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:17:25
+- Message content:
+
+```
+Merge branch 'main' of github.com:noclocks/noclocksR
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: chore: autopublish 2024-02-07T20:17:46Z{#issues-na-b368b432c8f8f9876d5ff7df7d8ca37f13a7c6b2}
+
+- Commit number: b368b432c8f8f9876d5ff7df7d8ca37f13a7c6b2
+- Author: github-actions[bot] ; E-mail: github-actions[bot]@users.noreply.github.com
+- Date: 2024-02-07 20:17:47
+- Message content:
+
+```
+chore: autopublish 2024-02-07T20:17:46Z
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add pkgdown GHA{#issues-na-93cf2a58a987d51cc24c782ecba464803706604a}
+
+- Commit number: 93cf2a58a987d51cc24c782ecba464803706604a
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:19:01
+- Message content:
+
+```
+feat: add pkgdown GHA
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: docs: add pkgdown site{#issues-na-7e04dbb3004756660d2f990f2a1937ebf55ac5f4}
+
+- Commit number: 7e04dbb3004756660d2f990f2a1937ebf55ac5f4
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:19:12
+- Message content:
+
+```
+docs: add pkgdown site
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: init: update description deps{#issues-na-0d2e09433cd4f5ec71eaddaaadb9c0feca40b39c}
+
+- Commit number: 0d2e09433cd4f5ec71eaddaaadb9c0feca40b39c
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:19:29
+- Message content:
+
+```
+init: update description deps
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: init: update pkgdevt{#issues-na-0e6b5d99405cdd3893d97bc2970a7712929a4d54}
+
+- Commit number: 0e6b5d99405cdd3893d97bc2970a7712929a4d54
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:19:35
+- Message content:
+
+```
+init: update pkgdevt
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: init: update ignore files{#issues-na-ee3faa8c559bdaf8002a07c9e1553f5d97ed8352}
+
+- Commit number: ee3faa8c559bdaf8002a07c9e1553f5d97ed8352
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:19:44
+- Message content:
+
+```
+init: update ignore files
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: test: add tests{#issues-na-64563da9a636428ba8e896bd06cd979a5ad5960b}
+
+- Commit number: 64563da9a636428ba8e896bd06cd979a5ad5960b
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:19:50
+- Message content:
+
+```
+test: add tests
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: Merge branch 'main' of github.com:noclocks/noclocksR{#issues-na-4783708a36209e65f7bb63575055715512e169b3}
+
+- Commit number: 4783708a36209e65f7bb63575055715512e169b3
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:19:55
+- Message content:
+
+```
+Merge branch 'main' of github.com:noclocks/noclocksR
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: chore: autopublish 2024-02-07T20:20:12Z{#issues-na-bb6ec34f04673de2f586573bd47fc440abfbe142}
+
+- Commit number: bb6ec34f04673de2f586573bd47fc440abfbe142
+- Author: github-actions[bot] ; E-mail: github-actions[bot]@users.noreply.github.com
+- Date: 2024-02-07 20:20:12
+- Message content:
+
+```
+chore: autopublish 2024-02-07T20:20:12Z
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: docs: update badges for README with new GHA{#issues-na-d40be7921af266e8a3b409493c5aad4d9e160634}
+
+- Commit number: d40be7921af266e8a3b409493c5aad4d9e160634
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:21:45
+- Message content:
+
+```
+docs: update badges for README with new GHA
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: Merge branch 'main' of github.com:noclocks/noclocksR{#issues-na-1b9d7f8006b40681152ef4faf598169c983e9587}
+
+- Commit number: 1b9d7f8006b40681152ef4faf598169c983e9587
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@jimbrig.com
+- Date: 2024-02-07 20:21:48
+- Message content:
+
+```
+Merge branch 'main' of github.com:noclocks/noclocksR
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: chore: autopublish 2024-02-07T20:22:09Z{#issues-na-cbeb4cf4749afee2356eddce309c737e8eba3d4a}
+
+- Commit number: cbeb4cf4749afee2356eddce309c737e8eba3d4a
+- Author: github-actions[bot] ; E-mail: github-actions[bot]@users.noreply.github.com
+- Date: 2024-02-07 20:22:09
+- Message content:
+
+```
+chore: autopublish 2024-02-07T20:22:09Z
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: config: add cache to data-raw{#issues-na-9079f1392229845fff73444384d389ae4eb3435e}
+
+- Commit number: 9079f1392229845fff73444384d389ae4eb3435e
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@noclocks.dev
+- Date: 2024-06-06 14:14:32
+- Message content:
+
+```
+config: add cache to data-raw
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add client demo dataset{#issues-na-7968bab641d5f6955583fa90567e5fb00329fa9b}
+
+- Commit number: 7968bab641d5f6955583fa90567e5fb00329fa9b
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@noclocks.dev
+- Date: 2024-06-06 14:14:40
+- Message content:
+
+```
+feat: add client demo dataset
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add gitignore templates data{#issues-na-5b9cdfba1f1b9575b3e24acf096232494ac4098d}
+
+- Commit number: 5b9cdfba1f1b9575b3e24acf096232494ac4098d
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@noclocks.dev
+- Date: 2024-06-06 14:14:48
+- Message content:
+
+```
+feat: add gitignore templates data
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: add R package data{#issues-na-e2f05748c7e973f9a66d131bd0db96350e80b955}
+
+- Commit number: e2f05748c7e973f9a66d131bd0db96350e80b955
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@noclocks.dev
+- Date: 2024-06-06 14:14:59
+- Message content:
+
+```
+feat: add R package data
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: feat: new functions{#issues-na-de68b5f1ab8a0e4084282cffd5e85a661415b942}
+
+- Commit number: de68b5f1ab8a0e4084282cffd5e85a661415b942
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@noclocks.dev
+- Date: 2024-06-06 14:15:19
+- Message content:
+
+```
+feat: new functions
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)
+
+### commit: update{#issues-na-2fa7575830c15f19cb06ab6818cb6564e0d79be0}
+
+- Commit number: 2fa7575830c15f19cb06ab6818cb6564e0d79be0
+- Author: Jimmy Briggs ; E-mail: jimmy.briggs@noclocks.dev
+- Date: 2024-06-06 14:15:33
+- Message content:
+
+```
+update
+
+
+```
+- Related patterns:
+  + Issues: [No related issues](#issues-na)

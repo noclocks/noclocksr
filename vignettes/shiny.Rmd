@@ -1,0 +1,39 @@
+---
+title: "shiny"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{shiny}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+# library(noclocksR)
+```
+
+## Shiny Concepts
+
+## Shiny Cards
+
+Card Types:
+
+- User Profile Card (`user_card()`): A card that displays user information.
+- Metric Cards: Cards for displaying metrics:
+  - Value Box (`val_box()`): A card that displays a single value.
+  - Summary Box (`summary_box()`): A card that displays a summary of a metric.
+  - Info Box (`info_box()`): A card that displays information.
+- Basic Cards: Basic cards for displaying information:
+  - Info Card (`info_card()`): A card that displays information.
+  - Alert Card (`alert_card()`): A card that displays an alert.
+  - Warning Card (`warning_card()`): A card that displays a warning.
+  - Error Card (`error_card()`): A card that displays an error.
+
+- Flip Card (`flip_card()`): A card that flips between two sides.
+

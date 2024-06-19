@@ -1,3 +1,9 @@
+# use_noclocks_pkgdown <- function(
+#   pkg = pkgload::pkg_name(),
+#   pkgdown_path = "public",
+#
+#   )
+
 #' No Clocks `pkgdown`
 #'
 #' @description
@@ -5,9 +11,9 @@
 #' extra reports.
 #'
 #' The reports that can be included are:
-#'   - Test Results Report via [testdown::testdown()]
+#'   - Test Results Report via [testdown::test_down()]
 #'   - Test Coverage Results via [covrpage::covrpage()]
-#'   - Git Reports via [gitdown::gitdown()]
+#'   - Git Reports via [gitdown::git_down()]
 #'
 #' @param pkg (character) Path to the package in development
 #' @param pkgdown_path (character) Relative path inside the package to store
@@ -23,6 +29,15 @@
 #'
 #' @importFrom fs dir_create file_move
 #' @importFrom pkgdown build_site
+#' @importFrom covr package_coverage report
+#' @importFrom covrpage covrpage
+#' @importFrom testdown test_down
+#' @importFrom gitdown git_down
+#' @importFrom markdown markdownToHTML
+#' @importFrom jsonlite fromJSON
+#' @importFrom glue glue
+#' @import htmltools
+#' @import pkgdown
 #'
 #' @return None Generate a pkgdown with test and coverage reports
 #' @export
@@ -35,7 +50,7 @@
 #' #    reports = c("testdown","coverage")
 #' }
 build_pkgdown_with_reports <- function(
-    pkg = ".",
+    pkg = getwd(),
     pkgdown_path = "public",
     assets_path = "pkgdown/assets",
     reports = c("coverage", "testdown", "gitdown"),
@@ -68,20 +83,23 @@ build_pkgdown_with_reports <- function(
     }
     if (!requireNamespace("DT", quietly = TRUE)) {
       stop(
-        "{DT} needs to be installed for"
+        "{DT} needs to be installed"
       )
     }
     if (!requireNamespace("htmltools", quietly = TRUE)) {
       stop(
-        "{htmltools} needs to be installed for"
+        "{htmltools} needs to be installed"
       )
     }
     if (!requireNamespace("markdown", quietly = TRUE)) {
       stop(
-        "{markdown} needs to be installed for"
+        "{markdown} needs to be installed"
       )
     }
-    covr_pkg <- covr::package_coverage(path = pkg)
+    covr_pkg <- covr::package_coverage(
+      path = pkg,
+      install_path = file.path(pkg, "covr")
+    )
     covr::report(
       x = covr_pkg,
       file = file.path(assets_path, "coverage", "coverage.html"),
@@ -108,7 +126,7 @@ build_pkgdown_with_reports <- function(
   if (isTRUE("testdown" %in% reports)) {
     if (!requireNamespace("testdown", quietly = TRUE)) {
       stop(
-        "{testdown} needs to be installed for"
+        "{testdown} needs to be installed"
       )
     }
 
@@ -124,7 +142,7 @@ build_pkgdown_with_reports <- function(
   if (isTRUE("gitdown" %in% reports)) {
     if (!requireNamespace("gitdown", quietly = TRUE)) {
       stop(
-        "{gitdown} needs to be installed for"
+        "{gitdown} needs to be installed"
       )
     }
 
@@ -167,6 +185,10 @@ build_pkgdown_with_reports <- function(
   pkgdown::build_site(
     pkg = pkg,
     override = yaml_settings,
-    preview = FALSE
+    preview = FALSE,
+    devel = TRUE,
+    install = FALSE,
+    new_process = TRUE
   )
 }
+

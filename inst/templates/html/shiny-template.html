@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ headContent() }}
+    {{ bootstrapLib() }}
+
+    <link rel="stylesheet" type="text/css" href="https://educationshinyappteam.github.io/Style_Guide/theme/boast.css">
+
+    {{ scripts() }}
+    <script>
+      $(document).ready(function() {document.getElementById('info').setAttribute('aria-label',`App info`)})
+      $(document).ready(function() {document.getElementById('surveyLink').setAttribute('aria-label',`Feedback Survey`)})
+      $(document).ready(function() {document.getElementById('home').setAttribute('aria-label',`BOAST home page`)})
+    </script>
+
+
+  </head>
+  <body>
+    {{ body }}
+  </body>
+</html>

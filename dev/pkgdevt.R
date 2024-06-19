@@ -110,6 +110,7 @@ usethis::use_rmarkdown_template(
 
 usethis::use_vignette("noclocksR")
 usethis::use_vignette("styleguide")
+usethis::use_vignette("shiny")
 
 usethis::use_pkgdown()
 usethis::use_pkgdown_github_pages()

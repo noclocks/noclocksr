@@ -7,6 +7,25 @@
 #
 #  ------------------------------------------------------------------------
 
+c(
+  "AndreaCirilloAC/paletter",
+  "simmwill/coolors"
+) |> purrr::walk(
+  pak::pak
+)
+
+library(paletter)
+library(RColorBrewer)
+library(colorspace)
+library(sass)
+library(thematic)
+
+bootstrap_colors <- fresh::bs_vars_color(
+
+)
+
+paletter::optimize_palette()
+
 styles <- list(
   "primary" = "#121618",
   "secondary_1" = "#E6AA68",

@@ -1,0 +1,9 @@
+*
+!.gitignore
+!README.md
+!auth0.yml
+!config.template.yml
+!credentials.template.json
+!keeper.config.template.json
+!oauth.template.json
+!service-account.template.json

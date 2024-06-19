@@ -1,0 +1,72 @@
+template:
+  bslib:
+    primary: "#222831"
+    base_font: {google: {family: "Inter", wght: [400, 600], ital: [0, 1]}}
+    code_font: {google: {family: "Fira Code", wght: [400, 600]}}
+    font_scale: 1.2
+    fg: "#172431"
+    bg: "#fcfcfc"
+    border-radius: 0
+    btn-border-radius: 3px
+    grid-gutter-width: 3rem
+    pkgdown-nav-height: 78px
+
+code:
+  width: 74
+
+navbar:
+  type: dark
+  bg: none
+
+authors:
+  No Clocks:
+    href: https://noclocks.dev
+    html: <img src='https://github.com/noclocks/brand/blob/cd88362f4509db8e2cea6630dbac9115ddd31ec2/src/logo/noclocks-logo-black.svg' alt='No Clocks' width='72' />
+  RStudio:
+    href: https://www.rstudio.com
+    html: <img src='https://www.tidyverse.org/rstudio-logo.svg' alt='RStudio' width='72' />
+  Posit, PBC:
+    href: https://www.posit.co
+    html: >-
+      <img src='https://www.tidyverse.org/posit-logo.svg' alt='Posit' height='16' width='62' style="margin-bottom: 3px;" />
+  Posit Software, PBC:
+    href: https://www.posit.co
+    html: >-
+      <img src='https://www.tidyverse.org/posit-logo.svg' alt='Posit' height='16' width='62' style="margin-bottom: 3px;" />
+
+  Alison Hill:
+    href: https://www.apreshill.com
+  Barret Schloerke:
+    href: http://schloerke.com
+  Carson Sievert:
+    href: https://cpsievert.me
+  Christophe Dervieux:
+    href: https://github.com/cderv
+  Davis Vaughan:
+    href: https://github.com/DavisVaughan
+  Gábor Csárdi:
+    href: https://github.com/gaborcsardi
+  Hadley Wickham:
+    href: https://hadley.nz
+  Hannah Frick:
+    href: https://frick.ws
+  Jennifer Bryan:
+    href: https://jennybryan.org
+  Jim Hester:
+    href: https://www.jimhester.com/
+  Julia Silge:
+    href: https://juliasilge.com/
+  Kirill Müller:
+    href: https://krlmlr.info
+  Lionel Henry:
+    href: https://github.com/lionel-
+  Max Kuhn:
+    href: https://github.com/topepo
+  Romain François:
+    href: https://github.com/romainfrancois
+  Thomas Lin Pedersen:
+    href: https://data-imaginist.com
+  Winston Chang:
+    href: https://github.com/wch
+  Yihui Xie:
+    href: https://yihui.org/
