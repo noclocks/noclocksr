@@ -10,3 +10,7 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+^public$
+^LICENSE\.md$
+^srcjs$
+^token\.rds$

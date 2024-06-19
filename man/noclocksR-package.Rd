@@ -10,6 +10,14 @@
 
 No Clocks, LLC packaged assets and workflows
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://noclocks.github.io/noclocksR/}
+  \item \url{https://docs.noclocks.dev/noclocksR/}
+}
+
+}
 \author{
 \strong{Maintainer}: Jimmy Briggs \email{jimmy.briggs@jimbrig.com} (\href{https://orcid.org/0000-0002-7489-8787}{ORCID})
 

@@ -1,0 +1,16 @@
+#' http_status_codes
+#'
+#' @description
+#' A dataset containing HTTP status codes and their corresponding messages.
+#'
+#' @source
+#' https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+#'
+#' @format A data.frame with 63 rows and 3 columns:
+#' \describe{
+#'   \item{\code{code}}{integer. The HTTP Status Code.}
+#'   \item{\code{message}}{character. The HTTP Status Message.}
+#'   \item{\code{category}}{character. The HTTP Status Category.}
+#'}
+"http_status_codes"
+

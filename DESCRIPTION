@@ -6,19 +6,51 @@ Authors@R:
            comment = c(ORCID = "0000-0002-7489-8787"))
 Description: No Clocks, LLC packaged assets and workflows
 License: MIT + file LICENSE
-Encoding: UTF-8
-Language: en-US
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.0
+URL: https://noclocks.github.io/noclocksR/,
+    https://docs.noclocks.dev/noclocksR/
+Depends: 
+    R (>= 2.10)
 Imports: 
-    tibble
+    cli,
+    config,
+    covr,
+    covrpage,
+    digest,
+    dplyr,
+    fs,
+    gargle,
+    gitdown,
+    glue,
+    here,
+    htmltools,
+    httr,
+    httr2,
+    jsonlite,
+    keyring,
+    markdown,
+    metathis,
+    parallel,
+    pkgdown,
+    pkgload,
+    purrr,
+    rlang,
+    stringr,
+    testdown,
+    tibble,
+    tibblify,
+    tidyr,
+    utils,
+    xml2
 Suggests: 
     knitr,
     rmarkdown,
     testthat (>= 3.0.0)
-VignetteBuilder: knitr
-URL: https://noclocks.github.io/noclocksR/
+VignetteBuilder: 
+    knitr
+Config/Needs/website: noclocks/noclocksR
 Config/testthat/edition: 3
-Depends: 
-    R (>= 2.10)
+Encoding: UTF-8
+Language: en-US
 LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
