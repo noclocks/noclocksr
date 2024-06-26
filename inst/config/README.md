@@ -1,0 +1,97 @@
+# Configurations
+
+## Integrations
+
+- Slack:
+  - Webhook URL
+  - Channel ID
+  - User ID
+  - App Manifest(s)
+- Toggl:
+  - API Token
+  - Workspace ID
+  - Project ID
+  - Task ID
+  - User ID
+- Todoist:
+  - API Token
+  - Project ID
+  - Task ID
+- Raindrop.io:
+  - API Token
+  - Collection ID
+  - Bookmark ID
+- Resend:
+  - API:
+    - API Key
+    - API Secret
+  - SMTP:
+    - SMTP Host
+    - SMTP Port
+    - SMTP User
+    - SMTP Password
+- GitHub:
+  - Personal Access Token
+- Supabase:
+  - Project ID
+  - API:
+    - ANON API Secret
+    - Service Role Key
+  - Database:
+    - URL
+    - Host
+    - Port
+    - User
+    - Password
+    - Database Name
+    - SSL Mode
+- Keeper Password Manager:
+  - Server
+  - User
+  - Password
+  - Private Key
+  - Device Token
+- Google Cloud Platform:
+  - Project ID
+  - API Key
+  - OAuth Client Credentials
+  - Service Account Credentials
+  - APIs:
+    - Authentication
+    - IAM
+    - Compute Engine
+    - Cloud Run
+    - Cloud Build
+    - Storage
+    - Scheduler
+    - Secret Manager
+    - Pub/Sub
+    - Maps APIs
+- Google Workspace:
+  - Google Mail (gmail)
+  - Google Drive (gdrive)
+  - Google Calendar (gcal)
+  - Google Sheets (gsheets)
+  - Google Docs (gdocs)
+  - Google Meet (gmeet)
+  - Google Contacts (People API)
+  - Google Tasks
+- Google Marketing Platform:
+  - Google My Business Profile:
+    - API Key
+    - Location ID
+  - Google Tag Manager:
+    - Container ID
+  - Google Ads:
+    - Customer ID
+  - Google Search Console:
+    - Property ID
+  - Google Analytics:
+    - Tracking ID
+- Brandfetch:
+  - API Key
+- RemoveBG:
+  - API Key
+- Real Favicon Generator:
+  - API Key
+

@@ -132,67 +132,211 @@ fetch_brand <- function(
 
 }
 
+#' Download Brand Logos
+#'
+#' @param brand Brand
+#' @param path Path
+#' @param ... ...
+#'
+#' @return Invisible
+#' @export
+#'
+#' @importFrom dplyr mutate
+#' @importFrom fs dir_exists dir_create
+#' @importFrom purrr pmap_chr pwalk
+download_brand_logos <- function(
+    brand,
+    path = "inst/extdata/brand",
+    ...
+) {
 
-# out_company <- tibble::tibble(
-#   id = content$id,
-#   name = content$name,
-#   domain = domain,
-#   claimed = content$claimed,
-#   description = content$description,
-#   longDescription = content$longDescription,
-#   links = content$links |> purrr::map_dfr(
-#     ~ tibble::tibble(
-#       name = .x$name,
-#       url = .x$url
-#     )
-#   ),
-#   qualityScore = content$qualityScore,
-#   company = content$company |> purrr::map_dfr(
-#     ~ tibble::tibble(
-#       industries = .x$industries |> purrr::map_dfr(
-#         ~ tibble::tibble(
-#           score = .x$score,
-#           id = .x$id,
-#           name = .x$name,
-#           emoji = .x$emoji,
-#           parent = .x$parent |> purrr::map_dfr(
-#             ~ tibble::tibble(
-#               emoji = .x$emoji,
-#               id = .x$id,
-#               name = .x$name,
-#               slug = .x$slug
-#             )
-#           ),
-#           slug = .x$slug
-#         )
-#       ),
-#       kind = .x$kind,
-#       location = .x$location
-#     )
-#   )
-#
-# )
+  if (!fs::dir_exists(path)) {
+    fs::dir_create(path)
+  }
 
-# out_logos <- content$logos |> purrr::map_dfr(
-#   ~ tibble::tibble(
-#     domain = domain,
-#     theme = .x$theme,
-#     src = .x$formats$src,
-#     background = .x$formats$background,
-#     format = .x$formats$format,
-#     height = .x$formats$height,
-#     width = .x$formats$width,
-#     size = .x$formats$size,
-#     tags = .x$tags,
-#     type = .x$type
-#   )
-# )
-#
-# out_colors <- content$colors |> purrr::map_dfr(
-#   ~ tibble::tibble(
-#     domain = domain,
-#     hex = .x$hex,
-#     type = .x$type,
-#     brightness = .x$brightness
-#   )
-# )
+  brand_logos <- brand$logos |>
+    dplyr::mutate(
+      file = purrr::pmap_chr(
+        list(
+          brand_name = brand$name,
+          type = type,
+          format = format,
+          height = height,
+          width = width
+        ),
+        get_logo_file_name
+      )
+    )
+
+  brand_logos |>
+    purrr::pwalk(
+      download_logo,
+      src = brand$logos$src,
+      name = brand$name,
+      path = path,
+      ...
+    )
+
+  return(
+    invisible(TRUE)
+  )
+
+}
+
+#' Get Brand Logos
+#'
+#' @param brand Brand
+#' @param path Path
+#' @param ... ...
+#'
+#' @return Invisible
+#' @export
+#'
+#' @importFrom dplyr mutate
+#' @importFrom purrr pmap_chr
+#' @importFrom fs dir_exists dir_create
+#' @importFrom purrr pwalk pmap_chr
+get_brand_logos <- function(
+    brand,
+    path,
+    ...
+) {
+
+  brand_logos <- brand$logos |>
+    dplyr::mutate(
+      file = purrr::pmap_chr(
+        list(
+          brand_name = brand$name,
+          type = type,
+          format = format,
+          height = height,
+          width = width
+        ),
+        get_logo_file_name
+      )
+    )
+
+  purrr::walk2(
+    brand_logos$src,
+    brand_logos$file,
+    ~download_logo(
+      src = .x,
+      file = .y,
+      name = brand$name,
+      type = brand_logos$type,
+      format = brand_logos$format,
+      height = brand_logos$height,
+      width = brand_logos$width
+    )
+  )
+
+  return(
+    invisible(TRUE)
+  )
+
+}
+
+#' Download Brand Logo File
+#'
+#' @description
+#' This function downloads a brand logo file from a URL to the specified path.
+#'
+#' @param src The URL of the logo file
+#' @param file The name of the logo file
+#' @param name The name of the brand
+#' @param path The path to save the logo file
+#' @param type The type of logo (icon or logo)
+#' @param format The format of the logo (png, svg, jpeg)
+#' @param height The height of the logo
+#' @param width The width of the logo
+#' @param ... Additional arguments
+#'
+#' @return Invisible
+#' @export
+#'
+#' @importFrom stringr str_replace_all str_to_lower
+#' @importFrom fs dir_exists dir_create path
+download_logo <- function(
+    src,
+    file,
+    name,
+    path = "inst/extdata/brand",
+    type = c("icon", "logo"),
+    format = c("png", "svg", "jpeg"),
+    height,
+    width,
+    ...
+) {
+
+  type <- match.arg(type)
+  format <- match.arg(format)
+  height <- as.integer(height)
+  width <- as.integer(width)
+  src <- src |> stringr::str_replace_all(" ", "%20")
+  brand_name_clean <- stringr::str_to_lower(name) |> stringr::str_replace_all(" ", "_")
+  size <- paste0(as.character(height), "x", as.character(width))
+
+  if (!fs::dir_exists(path)) {
+    fs::dir_create(path)
+  }
+
+  file_path <- fs::path(path, file)
+
+  download.file(
+    src,
+    destfile = file_path,
+    method = "curl"
+  )
+
+  return(
+    invisible(TRUE)
+  )
+
+}
+
+#' Get Logo File Name
+#'
+#' @param brand_name Brand Name
+#' @param type Type
+#' @param theme Theme
+#' @param format Format
+#' @param height Height
+#' @param width Width
+#' @param ... ...
+#'
+#' @return The logo file name
+#' @export
+#'
+#' @importFrom stringr str_replace_all str_to_lower
+get_logo_file_name <- function(
+    brand_name,
+    type,
+    theme,
+    format,
+    height = NA,
+    width = NA,
+    ...
+) {
+
+  brand_name_clean <- stringr::str_to_lower(brand_name) |> stringr::str_replace_all(" ", "_")
+  size <- ""
+  if (all(
+    !is.na(height),
+    !is.na(width),
+    format != "svg"
+  )) {
+    size <- paste0("-", as.character(height), "x", as.character(width))
+  }
+
+  paste0(
+    brand_name_clean,
+    "-",
+    type,
+    "-",
+    theme,
+    size,
+    ".",
+    format
+  )
+
+}
