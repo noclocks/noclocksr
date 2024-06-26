@@ -11,6 +11,7 @@ URL: https://noclocks.github.io/noclocksR/,
 Depends: 
     R (>= 2.10)
 Imports: 
+    assertthat,
     cli,
     config,
     covr,
@@ -30,10 +31,12 @@ Imports:
     markdown,
     metathis,
     parallel,
+    pdftools,
     pkgdown,
     pkgload,
     purrr,
     rlang,
+    slackr,
     stringr,
     testdown,
     tibble,
