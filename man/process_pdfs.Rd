@@ -53,7 +53,7 @@ Logs of the processing are written to a log file.
 \examples{
 \dontrun{
 
-fs::dir_copy(fs::path_package("noclocksR", "PDFs", "Input"), fs::path("Input"))
+fs::dir_copy(fs::path_package("noclocksr", "PDFs", "Input"), fs::path("Input"))
 
 process_pdfs(
   input_dir = ,
