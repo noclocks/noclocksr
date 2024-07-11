@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(noclocksR)
+library(noclocksr)
 
-test_check("noclocksR")
+test_check("noclocksr")
