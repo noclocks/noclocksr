@@ -1,5 +1,5 @@
 library(shiny)
-# library(noclocksR)
+# library(noclocksr)
 
 ui <- function(request) {
   shiny_resume_page(

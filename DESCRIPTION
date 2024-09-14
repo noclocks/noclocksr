@@ -1,16 +1,17 @@
-Package: noclocksR
-Title: What the Package Does (One Line, Title Case)
+Package: noclocksr
+Title: Internal Development at No Clocks, LLC
 Version: 0.0.0.9000
 Authors@R: 
     person("Jimmy", "Briggs", , "jimmy.briggs@jimbrig.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-7489-8787"))
 Description: No Clocks, LLC packaged assets and workflows
 License: MIT + file LICENSE
-URL: https://noclocks.github.io/noclocksR/,
-    https://docs.noclocks.dev/noclocksR/
+URL: https://noclocks.github.io/noclocksr/,
+    https://docs.noclocks.dev/noclocksr/
 Depends: 
-    R (>= 2.10)
+    R (>= 4.1)
 Imports: 
+    assertthat,
     cli,
     config,
     covr,
@@ -21,36 +22,45 @@ Imports:
     gargle,
     gitdown,
     glue,
+    grDevices,
     here,
     htmltools,
     httr,
     httr2,
     jsonlite,
     keyring,
+    lubridate,
     markdown,
     metathis,
+    monochromeR,
+    paletter,
     parallel,
+    pdftools,
     pkgdown,
     pkgload,
     purrr,
     rlang,
+    slackr,
     stringr,
     testdown,
     tibble,
     tibblify,
     tidyr,
+    togglr,
+    usethis,
     utils,
-    xml2
+    xml2,
+    yaml
 Suggests: 
     knitr,
     rmarkdown,
-    testthat (>= 3.0.0)
+    testthat
 VignetteBuilder: 
     knitr
-Config/Needs/website: noclocks/noclocksR
+Config/Needs/website: noclocks/noclocksr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2

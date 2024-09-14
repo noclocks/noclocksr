@@ -7,3 +7,6 @@
 !keeper.config.template.json
 !oauth.template.json
 !service-account.template.json
+!slack-app-manifest.yml
+!slack-app-manifest.json
+!slackr.example.dcf

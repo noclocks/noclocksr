@@ -11,3 +11,5 @@ docs
 token.rds
 
 config.yml
+
+dev/secret.R
