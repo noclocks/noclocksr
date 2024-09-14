@@ -1,7 +1,7 @@
 
 #  ------------------------------------------------------------------------
 #
-# Title : noclocksR Package Development Script
+# Title : noclocksr Package Development Script
 #    By : Jimmy Briggs
 #  Date : 2024-02-07
 #
@@ -31,7 +31,7 @@ usethis::use_data_raw("client_demo_data")
 
 # initialize --------------------------------------------------------------
 
-usethis::create_package("noclocksR")
+usethis::create_package("noclocksr")
 usethis::use_namespace()
 usethis::use_roxygen_md()
 usethis::use_git()
@@ -108,7 +108,7 @@ usethis::use_rmarkdown_template(
 )
 
 
-usethis::use_vignette("noclocksR")
+usethis::use_vignette("noclocksr")
 usethis::use_vignette("styleguide")
 usethis::use_vignette("shiny")
 

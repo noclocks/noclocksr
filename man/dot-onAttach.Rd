@@ -4,7 +4,7 @@
 \alias{.onAttach}
 \title{Startup Functions}
 \usage{
-.onAttach(libname = find.package("noclocksR"), pkgname = "noclocksR")
+.onAttach(libname = find.package("noclocksr"), pkgname = "noclocksr")
 }
 \description{
 These functions are run when the package is loaded or attached.

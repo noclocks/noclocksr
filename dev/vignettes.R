@@ -1,7 +1,7 @@
 
 #  ------------------------------------------------------------------------
 #
-# Title : noclocksR Package Vignettes
+# Title : noclocksr Package Vignettes
 #    By : Jimmy Briggs
 #  Date : 2024-06-16
 #
@@ -17,7 +17,7 @@ require(rmarkdown)
 # vignettes ---------------------------------------------------------------
 
 c(
-  "noclocksR",
+  "noclocksr",
   "devenv",
   "pkgdevt",
   "shiny",
@@ -30,3 +30,5 @@ c(
   purrr::walk(
     usethis::use_vignette
   )
+
+usethis::use_vignette("naming-conventions")
