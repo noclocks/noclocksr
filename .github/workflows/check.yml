@@ -1,0 +1,30 @@
+name: Check 📦
+
+on:
+  workflow_call:
+
+concurrency:
+  group: check-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: ${{ vars.CI_IMAGE }}
+    runs-on: ubuntu-latest
+    container:
+      image: ${{ vars.CI_IMAGE }}
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout project ⬇️
+        uses: actions/checkout@v4
+
+      - name: Install package dependencies 📄
+        uses: noclocks/noclocksr/.github/actions/dependencies@main
+
+      - name: Check 📦
+        run: |
+          options(crayon.enabled = TRUE)
+          rcmdcheck::rcmdcheck(error_on = "error", args = "--no-tests")
+        shell: Rscript {0}
