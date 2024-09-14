@@ -4,13 +4,13 @@
 #' These functions are run when the package is loaded or attached.
 
 .onAttach <- function(
-    libname = find.package("noclocksR"),
-    pkgname = "noclocksR"
+    libname = find.package("noclocksr"),
+    pkgname = "noclocksr"
 ) {
 
   vers <- as.character(utils::packageVersion(pkgname))
   msg <- sprintf(
-    "Welcome to `noclocksR`! This is version: %s\n",
+    "Welcome to `noclocksr`! This is version: %s\n",
     vers
   )
 
@@ -38,7 +38,7 @@
   #
   # .auth_env <<- rlang::env(
   #   auth_state = gargle::init_AuthState(
-  #     package = "noclocksR",
+  #     package = "noclocksr",
   #     client = oauth_client,
   #     auth_active = TRUE
   #   )

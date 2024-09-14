@@ -22,14 +22,18 @@ Imports:
     gargle,
     gitdown,
     glue,
+    grDevices,
     here,
     htmltools,
     httr,
     httr2,
     jsonlite,
     keyring,
+    lubridate,
     markdown,
     metathis,
+    monochromeR,
+    paletter,
     parallel,
     pdftools,
     pkgdown,
@@ -42,8 +46,11 @@ Imports:
     tibble,
     tibblify,
     tidyr,
+    togglr,
+    usethis,
     utils,
-    xml2
+    xml2,
+    yaml
 Suggests: 
     knitr,
     rmarkdown,
@@ -56,4 +63,4 @@ Encoding: UTF-8
 Language: en-US
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2.9000
+RoxygenNote: 7.3.2
