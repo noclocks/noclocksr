@@ -1,5 +1,5 @@
 # ---
-# repo: noclocks/noclocksR
+# repo: noclocks/noclocksr
 # file: standalone-db_connect.R
 # last-updated:
 # license: https://unlicense.org

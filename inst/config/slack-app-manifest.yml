@@ -1,0 +1,43 @@
+_metadata:
+  major_version: 1
+  minor_version: 0
+display_information:
+  name: "No Clocks SlackR"
+  description: "Slack App for use with the `slackr` R Package"
+  background_color: "#000000"
+  long_description: "Slack App for use with the `slackr` R Package within the scope of the No Clocks slack workspace and channels. Features include but are not limited to managing channels, managing channel canvases, sending and receiving messages, etc.""
+features:
+  bot_user:
+    display_name: slackr
+    always_online: false
+oauth_config:
+  scopes:
+    bot:
+      - users:read
+      - channels:read
+      - channels:history
+      - channels:manage
+      - channels:write.invites
+      - files:read
+      - files:write
+      - groups:read
+      - groups:write
+      - links:read
+      - links:write
+      - chat:write
+      - chat:write.customize
+      - chat:write.public
+      - im:history
+      - im:write
+      - im:read
+      - bookmarks:read
+      - bookmarks:write
+      - canvases:read
+      - canvases:write
+      - app_mentions:read
+      - commands
+      - incoming-webhook
+settings:
+  org_deploy_enabled: false
+  socket_mode_enabled: false
+  token_rotation_enabled: false

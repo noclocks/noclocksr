@@ -51,148 +51,391 @@ fetch_brand <- function(
     )
 
   res <- req |> httr2::req_perform()
+
   if (res$status_code != 200) {
     rlang::abort("Brandfetch API request failed")
   }
 
+
+  # extract content ---------------------------------------------------------
   content <- res |>
     httr2::resp_body_json()
 
-  spec <- tibblify::tspec_object(
+  init_spec <- tibblify::tspec_row(
     tibblify::tib_chr("id"),
     tibblify::tib_chr("name"),
     tibblify::tib_chr("domain"),
-    tibblify::tib_lgl("claimed"),
-    tibblify::tib_chr("description"),
-    tibblify::tib_chr("longDescription"),
-    tibblify::tib_dbl("qualityScore"),
-    tibblify::tib_unspecified("images"),
-
-    tibblify::tib_df(
-      "links",
-      tibblify::tib_chr("name"),
-      tibblify::tib_chr("url")
-    ),
-
-    tibblify::tib_df(
-      "logos",
-      tibblify::tib_chr("theme"),
-      tibblify::tib_df(
-        "formats",
-        tibblify::tib_chr("src"),
-        tibblify::tib_unspecified("background"),
-        tibblify::tib_chr("format"),
-        tibblify::tib_int("height"),
-        tibblify::tib_int("width"),
-        tibblify::tib_int("size"),
-      ),
-      tibblify::tib_unspecified("tags"),
-      tibblify::tib_chr("type")
-    ),
-
-    tibblify::tib_df(
-      "colors",
-      tibblify::tib_chr("hex"),
-      tibblify::tib_chr("type"),
-      tibblify::tib_int("brightness"),
-    ),
-
-    tibblify::tib_df(
-      "fonts",
-      tibblify::tib_chr("name"),
-      tibblify::tib_chr("type"),
-      tibblify::tib_chr("origin"),
-      tibblify::tib_chr("originId"),
-      tibblify::tib_unspecified("weights"),
-    ),
-
-    tibblify::tib_row(
-      "company",
-      tibblify::tib_unspecified("employees"),
-      tibblify::tib_unspecified("foundedYear"),
-      tibblify::tib_unspecified("kind"),
-      tibblify::tib_unspecified("location"),
-      tibblify::tib_df(
-        "industries",
-        tibblify::tib_unspecified("id", required = FALSE),
-        tibblify::tib_unspecified("parent"),
-        tibblify::tib_dbl("score", required = FALSE),
-        tibblify::tib_chr("name", required = FALSE),
-        tibblify::tib_chr("emoji", required = FALSE),
-        tibblify::tib_chr("slug", required = FALSE)
-      )
-    )
+    tag_line = tibblify::tib_chr("description"),
+    description = tibblify::tib_chr("longDescription"),
+    quality_score = tibblify::tib_dbl("qualityScore")
   )
 
-  out <- tibblify::tibblify(content, spec, unspecified = "drop")
-  out$logos <- out$logos |> tidyr::unnest("formats")
-  out$company <- out$company |> purrr::pluck("industries")
+  brand_init <- tibblify::tibblify(content, init_spec)
 
-  return(out)
+  # links -------------------------------------------------------------------
+  link_names <- content$links |> purrr::map_chr(purrr::pluck, "name")
+  link_urls <- content$links |> purrr::map_chr(purrr::pluck, "url")
+
+  links <- tibble::tibble(
+    name = link_names,
+    url = link_urls
+  )
+
+  # logos -------------------------------------------------------------------
+  logo_themes <- c()
+  logo_types <- c()
+  logo_urls <- c()
+  logo_backgrounds <- c()
+  logo_exts <- c()
+  logo_heights <- c()
+  logo_widths <- c()
+  logo_sizes <- c()
+
+  logo_formats <- content$logos |> purrr::map(purrr::pluck, "formats")
+
+  for (i in seq_along(content$logos)) {
+
+    theme <- content$logos[[i]]$theme
+    type <- content$logos[[i]]$type
+
+    formats <- content$logos[[i]]$formats
+
+    for (j in seq_along(formats)) {
+
+      url <- formats[[j]]$src
+      bg <- formats[[j]]$background
+      ext <- formats[[j]]$format
+      height <- formats[[j]]$height
+      width <- formats[[j]]$width
+      size <- formats[[j]]$size
+
+      if (is.null(bg)) { bg <- NA_character_ }
+      if (ext == "svg") {
+        height <- NA_integer_
+        width <- NA_integer_
+      }
+
+      logo_themes <- c(logo_themes, theme)
+      logo_types <- c(logo_types, type)
+      logo_urls <- c(logo_urls, url)
+      logo_backgrounds <- c(logo_backgrounds, bg)
+      logo_exts <- c(logo_exts, ext)
+      logo_heights <- c(logo_heights, height)
+      logo_widths <- c(logo_widths, width)
+      logo_sizes <- c(logo_sizes, size)
+
+    }
+
+  }
+
+  logos <- tibble::tibble(
+    theme = logo_themes,
+    type = logo_types,
+    src = logo_urls,
+    background = logo_backgrounds,
+    ext = logo_exts,
+    height = logo_heights,
+    width = logo_widths,
+    size = logo_sizes
+  )
+
+  # colors ------------------------------------------------------------------
+  colors_hex <- content$colors |> purrr::map_chr(purrr::pluck, "hex")
+  colors_type <- content$colors |> purrr::map_chr(purrr::pluck, "type")
+  colors_brightness <- content$colors |> purrr::map_int(purrr::pluck, "brightness")
+
+  hex2rgb <- function(hex) {
+    hold <- grDevices::col2rgb(hex)
+    r <- hold[1]
+    g <- hold[2]
+    b <- hold[3]
+    out <- glue::glue(
+      "rgb({r}, {g}, {b})"
+    )
+    out
+  }
+
+  colors <- tibble::tibble(
+    hex = colors_hex,
+    type = colors_type,
+    brightness = colors_brightness
+  ) |>
+    dplyr::mutate(
+      rgb = purrr::map_chr(hex, hex2rgb)
+    )
+
+  # fonts -------------------------------------------------------------------
+  fonts_name <- content$fonts |> purrr::map_chr(purrr::pluck, "name")
+  fonts_type <- content$fonts |> purrr::map_chr(purrr::pluck, "type")
+  fonts_origin <- content$fonts |> purrr::map_chr(purrr::pluck, "origin")
+  fonts_origin_id <- content$fonts |> purrr::map_chr(purrr::pluck, "originId")
+
+  fonts <- tibble::tibble(
+    name = fonts_name,
+    type = fonts_type,
+    origin = fonts_origin,
+    origin_id = fonts_origin_id
+  ) |>
+    dplyr::mutate(
+      gfonts_url = paste0(
+        "https://fonts.google.com/specimen/",
+        name
+      ),
+      import_css = paste0(
+        "@import url(",
+        stringr::str_c(
+          "https://fonts.googleapis.com/css2?family=",
+          name
+        ),
+        ");"
+      )
+    )
+
+  # company -----------------------------------------------------------------
+  company <- content$company |> purrr::compact()
+
+  industries <- company$industries
+
+  industry_names <- industries |> purrr::map_chr(purrr::pluck, "name")
+  industry_emojis <- industries |> purrr::map_chr(purrr::pluck, "emoji")
+  industry_slugs <- industries |> purrr::map_chr(purrr::pluck, "slug")
+  industry_scores <- industries |> purrr::map_dbl(purrr::pluck, "score")
+
+  company_industries <- tibble::tibble(
+    name = industry_names,
+    emoji = industry_emojis,
+    slug = industry_slugs,
+    score = industry_scores
+  ) |>
+    dplyr::arrange(
+      desc(score)
+    )
+
+
+  # brand -------------------------------------------------------------------
+
+  brand <- brand_init |>
+    dplyr::mutate(
+      links = list(links),
+      logos = list(logos),
+      colors = list(colors),
+      fonts = list(fonts),
+      company = list(company_industries)
+    )
+
+  return(brand)
 
 }
 
+# gmh_brand <- fetch_brand("gmhcommunities.com")
+# brand_yml <- yaml::as.yaml(gmh_brand)
+# yaml::write_yaml(gmh_brand, "dev/brandfetch/gmh_brand.yml")
 
-# out_company <- tibble::tibble(
-#   id = content$id,
-#   name = content$name,
-#   domain = domain,
-#   claimed = content$claimed,
-#   description = content$description,
-#   longDescription = content$longDescription,
-#   links = content$links |> purrr::map_dfr(
-#     ~ tibble::tibble(
-#       name = .x$name,
-#       url = .x$url
-#     )
-#   ),
-#   qualityScore = content$qualityScore,
-#   company = content$company |> purrr::map_dfr(
-#     ~ tibble::tibble(
-#       industries = .x$industries |> purrr::map_dfr(
-#         ~ tibble::tibble(
-#           score = .x$score,
-#           id = .x$id,
-#           name = .x$name,
-#           emoji = .x$emoji,
-#           parent = .x$parent |> purrr::map_dfr(
-#             ~ tibble::tibble(
-#               emoji = .x$emoji,
-#               id = .x$id,
-#               name = .x$name,
-#               slug = .x$slug
-#             )
-#           ),
-#           slug = .x$slug
-#         )
-#       ),
-#       kind = .x$kind,
-#       location = .x$location
-#     )
-#   )
-#
-# )
+#' Download Brand Logos
+#'
+#' @param brand Brand
+#' @param path Path
+#' @param ... ...
+#'
+#' @return Invisible
+#' @export
+#'
+#' @importFrom dplyr mutate
+#' @importFrom fs dir_exists dir_create
+#' @importFrom purrr pmap_chr pwalk
+download_brand_logos <- function(
+    brand,
+    path = "inst/extdata/brand",
+    ...
+) {
 
-# out_logos <- content$logos |> purrr::map_dfr(
-#   ~ tibble::tibble(
-#     domain = domain,
-#     theme = .x$theme,
-#     src = .x$formats$src,
-#     background = .x$formats$background,
-#     format = .x$formats$format,
-#     height = .x$formats$height,
-#     width = .x$formats$width,
-#     size = .x$formats$size,
-#     tags = .x$tags,
-#     type = .x$type
-#   )
-# )
-#
-# out_colors <- content$colors |> purrr::map_dfr(
-#   ~ tibble::tibble(
-#     domain = domain,
-#     hex = .x$hex,
-#     type = .x$type,
-#     brightness = .x$brightness
-#   )
-# )
+  if (!fs::dir_exists(path)) {
+    fs::dir_create(path)
+  }
+
+  brand_logos <- brand$logos |>
+    dplyr::mutate(
+      file = purrr::pmap_chr(
+        list(
+          brand_name = brand$name,
+          type = type,
+          format = format,
+          height = height,
+          width = width
+        ),
+        get_logo_file_name
+      )
+    )
+
+  brand_logos |>
+    purrr::pwalk(
+      download_logo,
+      src = brand$logos$src,
+      name = brand$name,
+      path = path,
+      ...
+    )
+
+  return(
+    invisible(TRUE)
+  )
+
+}
+
+#' Get Brand Logos
+#'
+#' @param brand Brand
+#' @param path Path
+#' @param ... ...
+#'
+#' @return Invisible
+#' @export
+#'
+#' @importFrom dplyr mutate
+#' @importFrom purrr pmap_chr
+#' @importFrom fs dir_exists dir_create
+#' @importFrom purrr pwalk pmap_chr
+get_brand_logos <- function(
+    brand,
+    path,
+    ...
+) {
+
+  brand_logos <- brand$logos |>
+    dplyr::mutate(
+      file = purrr::pmap_chr(
+        list(
+          brand_name = brand$name,
+          type = type,
+          format = format,
+          height = height,
+          width = width
+        ),
+        get_logo_file_name
+      )
+    )
+
+  purrr::walk2(
+    brand_logos$src,
+    brand_logos$file,
+    ~download_logo(
+      src = .x,
+      file = .y,
+      name = brand$name,
+      type = brand_logos$type,
+      format = brand_logos$format,
+      height = brand_logos$height,
+      width = brand_logos$width
+    )
+  )
+
+  return(
+    invisible(TRUE)
+  )
+
+}
+
+#' Download Brand Logo File
+#'
+#' @description
+#' This function downloads a brand logo file from a URL to the specified path.
+#'
+#' @param src The URL of the logo file
+#' @param file The name of the logo file
+#' @param name The name of the brand
+#' @param path The path to save the logo file
+#' @param type The type of logo (icon or logo)
+#' @param format The format of the logo (png, svg, jpeg)
+#' @param height The height of the logo
+#' @param width The width of the logo
+#' @param ... Additional arguments
+#'
+#' @return Invisible
+#' @export
+#'
+#' @importFrom stringr str_replace_all str_to_lower
+#' @importFrom fs dir_exists dir_create path
+download_logo <- function(
+    src,
+    file,
+    name,
+    path = "inst/extdata/brand",
+    type = c("icon", "logo"),
+    format = c("png", "svg", "jpeg"),
+    height,
+    width,
+    ...
+) {
+
+  type <- match.arg(type)
+  format <- match.arg(format)
+  height <- as.integer(height)
+  width <- as.integer(width)
+  src <- src |> stringr::str_replace_all(" ", "%20")
+  brand_name_clean <- stringr::str_to_lower(name) |> stringr::str_replace_all(" ", "_")
+  size <- paste0(as.character(height), "x", as.character(width))
+
+  if (!fs::dir_exists(path)) {
+    fs::dir_create(path)
+  }
+
+  file_path <- fs::path(path, file)
+
+  download.file(
+    src,
+    destfile = file_path,
+    method = "curl"
+  )
+
+  return(
+    invisible(TRUE)
+  )
+
+}
+
+#' Get Logo File Name
+#'
+#' @param brand_name Brand Name
+#' @param type Type
+#' @param theme Theme
+#' @param format Format
+#' @param height Height
+#' @param width Width
+#' @param ... ...
+#'
+#' @return The logo file name
+#' @export
+#'
+#' @importFrom stringr str_replace_all str_to_lower
+get_logo_file_name <- function(
+    brand_name,
+    type,
+    theme,
+    format,
+    height = NA,
+    width = NA,
+    ...
+) {
+
+  brand_name_clean <- stringr::str_to_lower(brand_name) |> stringr::str_replace_all(" ", "_")
+  size <- ""
+  if (all(
+    !is.na(height),
+    !is.na(width),
+    format != "svg"
+  )) {
+    size <- paste0("-", as.character(height), "x", as.character(width))
+  }
+
+  paste0(
+    brand_name_clean,
+    "-",
+    type,
+    "-",
+    theme,
+    size,
+    ".",
+    format
+  )
+
+}

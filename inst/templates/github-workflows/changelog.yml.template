@@ -1,0 +1,38 @@
+name: Automate Changelog
+on:
+  workflow_dispatch:
+  workflow_call:
+  push:
+    branches: [ "main" ]
+  pull_request:
+jobs:
+  changelog:
+    name: Generate Changelog
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: {{token}}
+      - name: Run Git Cliff
+        uses: tj-actions/git-cliff@v1.5.0
+        id: git-cliff
+        with:
+          args: "--verbose"
+          output: "{{changelog_path}}"
+          template-config: "{{config_path}}"
+      - name: Print Changelog
+        id: print-changelog
+        run: |
+          cat "{{changelog_path}}"
+      # Commit and push the updated changelog, IF not a pull request
+      - name: Commit and Push Changelog
+        if: github.event_name != 'pull_request'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+          set +e
+          git add {{changelog_path}}
+          git commit -m "[chore]: update changelog"
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git "main"
