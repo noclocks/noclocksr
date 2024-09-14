@@ -1,8 +1,8 @@
 ---
-title: "noclocksR"
+title: "noclocksr"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{noclocksR}
+  %\VignetteIndexEntry{noclocksr}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,5 +15,5 @@ knitr::opts_chunk$set(
 ```
 
 ```{r setup}
-library(noclocksR)
+library(noclocksr)
 ```

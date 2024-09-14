@@ -1,0 +1,146 @@
+---
+title: "Naming Conventions"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Naming Conventions}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+
+```
+
+# Naming Conventions in R
+
+> *Note*
+> 
+
+## File Naming Conventions
+
+### R Files
+
+Files containing R code (i.e. `*.R`) should be named using the following guidelines:
+
+- Use lowercase letters and underscores, also known as `snake_case`.
+
+- Use a descriptive name that clearly indicates the purpose of the file.
+
+- Use a *"noun_verb"* syntax to clearly indicate the purpose of the primary object
+  the code within the file interacts with. This will help in grouping related functions
+  and code while also making it easier to navigate the codebase.
+
+#### Example: Git Functions and Files
+
+For example, in this package, we provide a variety of functions for working with 
+`git`. These functions are stored inside R files under the `R/` folder using the
+naming syntax `git_*.R`. For example, `git_config.R`, `git_ignore.R`, `git_attributes.R`,
+and so on.
+
+The complete set of git R files and their corresponding exported functions are
+as follows:
+
+- `git_config.R`:
+  - `git_config_get()`
+  - `git_config_set()`
+  - `git_config_unset()`
+  - `git_config_list()`
+  - `git_config_assert()`
+  - `git_config_path()`
+  - `git_config_edit()`
+
+- `git_ignore.R`:
+  - `git_ignore()` (alias for `git_ignore_add()`)
+  - `git_ignore_add()`
+  - `git_ignore_remove()`
+  - `git_ignore_list()`
+  - `git_ignore_assert()`
+  - `git_ignore_path()`
+  - `git_ignore_edit()`
+  
+- `git_attributes.R`:
+  - `git_attributes()` (alias for `git_attributes_add()`)
+  - `git_attributes_add()`
+  - `git_attributes_remove()`
+  - `git_attributes_list()`
+  - `git_attributes_assert()`
+  - `git_attributes_path()`
+  - `git_attributes_edit()`
+
+- `git_hooks.R`:
+  - `git_hooks()` (alias for `git_hooks_add()`)
+  - `git_hooks_add()`
+  - `git_hooks_remove()`
+  - `git_hooks_list()`
+  - `git_hooks_assert()`
+  - `git_hooks_path()`
+  - `git_hooks_edit()`
+  
+- `git_init.R`:
+  - `git_init()`
+
+You can see that the naming convention `git_*.R` helps in grouping related functions
+together and makes it easier to navigate the codebase.
+
+### Vignettes and RMarkdown
+
+Vignettes and RMarkdown files should be named using the following guidelines:
+
+### Data Files
+
+Data files should be named using the following guidelines:
+
+### Tests
+
+Test files should be named using the following guidelines:
+
+### Documentation
+
+Documentation files should be named using the following guidelines:
+
+#### Roxygen Documentation
+
+Roxygen function documentation should be named using the following guidelines:
+
+## Function Naming Conventions
+
+### Function Names
+
+Function names should be named using the following guidelines:
+
+### Argument Names
+
+Function argument names should be named using the following guidelines:
+
+### Return Values
+
+Function return values should be named using the following guidelines:
+
+## Variable Naming Conventions
+
+### Variable Names
+
+Variable names should be named using the following guidelines:
+
+### Constants
+
+Constants should be named using the following guidelines:
+
+## Package Naming Conventions
+
+### Package Names
+
+Package names should be named using the following guidelines:
+
+### Namespace
+
+Namespace files should be named using the following guidelines:
+
+## Project Naming Conventions
