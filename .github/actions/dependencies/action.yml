@@ -1,0 +1,9 @@
+name: Dependencies
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Install package dependencies 📄
+      run: |
+        pak::local_install_deps(".", upgrade=FALSE, ask=FALSE, dependencies = TRUE)
+      shell: Rscript {0}
