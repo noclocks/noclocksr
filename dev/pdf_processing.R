@@ -41,7 +41,7 @@
 #' @examples
 #' \dontrun{
 #' process_pdfs(
-#'   input_dir = fs::path_package("noclocksR", "PDFs"),
+#'   input_dir = fs::path_package("noclocksr", "PDFs"),
 #'   output_dir = fs::path("output"),
 #'   archive_dir = fs::path("archive"),
 #'   log_file = fs::path("Logs", paste0(Sys.Date(), ".log"))
