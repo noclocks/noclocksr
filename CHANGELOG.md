@@ -6,6 +6,10 @@
 
 ## [Unreleased]
 
+## Bug Fixes
+
+- Fix GHA ([b8d7141](https://github.com/noclocks/noclocksr/commit/b8d7141b7a986d9d2508908beff38aa728fa9975))  - (Jimmy Briggs)
+
 ## Configuration
 
 - Add lintr configuration ([65fbcce](https://github.com/noclocks/noclocksr/commit/65fbcce3166ecac39089d7d140fc39ca2a72499b))  - (Jimmy Briggs)
