@@ -6,6 +6,8 @@
 \alias{noclocksr-package}
 \title{noclocksr: Internal Development at No Clocks, LLC}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 No Clocks, LLC packaged assets and workflows
 }
 \seealso{
