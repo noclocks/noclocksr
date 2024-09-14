@@ -10,10 +10,10 @@ on:
 permissions: read-all
 
 jobs:
-  generate_changelog:
-    uses: ./.github/workflows/changelog.yml
+  #generate_changelog:
+  #  uses: ./.github/workflows/changelog.yml
   generate_news:
-    needs: [generate_changelog]
+    #needs: [generate_changelog]
     runs-on: ubuntu-latest
     permissions:
       contents: write
