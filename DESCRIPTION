@@ -15,7 +15,7 @@ Imports:
     cli,
     config,
     covr,
-    covrpage,
+    covrpage (>= 0.2),
     digest,
     dplyr,
     fs,
@@ -33,7 +33,7 @@ Imports:
     markdown,
     metathis,
     monochromeR,
-    paletter,
+    paletter (>= 0.0.0.9000),
     parallel,
     pdftools,
     pkgdown,
@@ -42,7 +42,7 @@ Imports:
     rlang,
     slackr,
     stringr,
-    testdown,
+    testdown (>= 0.1.2.9000),
     tibble,
     tibblify,
     tidyr,
@@ -57,7 +57,13 @@ Suggests:
     testthat
 VignetteBuilder: 
     knitr
-Config/Needs/website: noclocks/noclocksr
+Remotes: 
+    AndreaCirilloAC/paletter,
+    ThinkR-open/testdown,
+    yonicd/covrpage
+Config/Needs/coverage: covr
+Config/Needs/extras: covrpage, testdown, paletter
+Config/Needs/website: pkgdown
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
