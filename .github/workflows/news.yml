@@ -31,9 +31,17 @@ jobs:
         with:
           use-public-rspm: true
 
+      - name: Install pak
+        run: |
+          Rscript -e 'install.packages("pak", repos = sprintf("https://r-lib.github.io/p/pak/stable/%s/%s/%s", .Platform$pkgType, R.Version()$os, R.Version()$arch))'
+
+      - name: Install Package Dependencies
+        run: |
+          Rscript -e 'pak::local_install_deps(".", upgrade=FALSE, ask=FALSE, dependencies = TRUE)'
+
       - name: Generate NEWS.md
         run: |
-          Rscript -e 'pak::local_install_deps(".", upgrade=FALSE, ask=FALSE, dependencies = TRUE); pkgload::load_all(); noclocksr::generate_news(output_file = "NEWS.md", input_file = "CHANGELOG.md", overwrite = TRUE)'
+          Rscript -e 'pkgload::load_all(); noclocksr::generate_news(output_file = "NEWS.md", input_file = "CHANGELOG.md", overwrite = TRUE)'
 
       - name: Commit and push changes
         run: |
