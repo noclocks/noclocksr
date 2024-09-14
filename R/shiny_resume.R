@@ -6,12 +6,12 @@ shiny_resume_deps <- function() {
     "5.0.6",
     src = system.file(
       "shiny/startbootstrap-resume-gh-pages/",
-      package = "noclocksR"
+      package = "noclocksr"
     ),
     stylesheet = list.files(
       system.file(
         "shiny/startbootstrap-resume-gh-pages/",
-        package = "noclocksR"
+        package = "noclocksr"
       ),
       pattern = "\\.css$",
       recursive = TRUE
@@ -19,7 +19,7 @@ shiny_resume_deps <- function() {
     script = list.files(
       system.file(
         "shiny/startbootstrap-resume-gh-pages/",
-        package = "noclocksR"
+        package = "noclocksr"
       ),
       pattern = "\\.js$",
       recursive = TRUE

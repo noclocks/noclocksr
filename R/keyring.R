@@ -21,7 +21,7 @@ init_keyring <- function(
 
     msg <- glue::glue(
       "Keyring '{name}' created successfully.",
-      "To add secrets to the keyring, use `noclocksR::add_secret()`."
+      "To add secrets to the keyring, use `noclocksr::add_secret()`."
     )
 
     rlang::inform(msg)
@@ -71,7 +71,7 @@ check_keyring <- function(
     rlang::abort(
       glue::glue(
         "Keyring '{keyring}' does not exist.",
-        "Please create it using `noclocksR::init_keyring()`."
+        "Please create it using `noclocksr::init_keyring()`."
       )
     )
   }
