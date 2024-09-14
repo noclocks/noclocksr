@@ -8,6 +8,7 @@
 
 ## Configuration
 
+- Add lintr configuration ([65fbcce](https://github.com/noclocks/noclocksr/commit/65fbcce3166ecac39089d7d140fc39ca2a72499b))  - (Jimmy Briggs)
 - Add cache to data-raw ([9079f13](https://github.com/noclocks/noclocksr/commit/9079f1392229845fff73444384d389ae4eb3435e))  - (Jimmy Briggs)
 
 ## Data
