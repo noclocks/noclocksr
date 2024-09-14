@@ -8,6 +8,7 @@
 
 ## Bug Fixes
 
+- Fix remote deps ([54a5a8f](https://github.com/noclocks/noclocksr/commit/54a5a8f58b07cc8182af9cc33623755fa7fe9143))  - (Jimmy Briggs)
 - Fix GHA ([b8d7141](https://github.com/noclocks/noclocksr/commit/b8d7141b7a986d9d2508908beff38aa728fa9975))  - (Jimmy Briggs)
 
 ## Configuration
