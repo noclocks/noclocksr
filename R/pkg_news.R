@@ -124,11 +124,7 @@ generate_news <- function(
 
   }
 
-  clog_path <- if (file.exists("CHANGELOG.md")) {
-    "CHANGELOG.md"
-  } else {
-    "inst/CHANGELOG.md"
-  }
+  clog_path <- "CHANGELOG.md"
 
   cli::cli_alert_info(
     c(
