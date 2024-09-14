@@ -31,12 +31,6 @@ jobs:
         with:
           use-public-rspm: true
 
-      - name: Install Dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          extra-packges: any::pkgload, any::markdown, any::xml2, any::stringr
-          needs: pkgload
-
       - name: Generate NEWS.md
         run: |
           Rscript -e 'pak::local_install_deps(".", upgrade=FALSE, ask=FALSE, dependencies = TRUE); pkgload::load_all(); noclocksr::generate_news(output_file = "NEWS.md", input_file = "CHANGELOG.md", overwrite = TRUE)'
