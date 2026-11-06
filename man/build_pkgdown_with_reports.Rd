@@ -35,7 +35,7 @@ overwritten. Default is \code{TRUE}.}
 None Generate a pkgdown with test and coverage reports
 }
 \description{
-Build a \code{\link[pkgdown:pkgdown-package]{pkgdown::pkgdown()}} site with additional options to include
+Build a \code{\link[pkgdown:pkgdown]{pkgdown::pkgdown()}} site with additional options to include
 extra reports.
 
 The reports that can be included are:

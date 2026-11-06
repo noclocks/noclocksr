@@ -35,7 +35,7 @@ parsing the content, and saving the files to the output directory.
 }
 \details{
 This function implements PDF extraction by extracting the PDF content via
-\code{\link[pdftools:pdftools]{pdftools::pdf_text()}} and parsing the extracted text into the following
+\code{\link[pdftools:pdf_text]{pdftools::pdf_text()}} and parsing the extracted text into the following
 components:
 \itemize{
 \item Document Type (Receipt or Invoice)
@@ -66,5 +66,5 @@ process_pdfs(
 }
 \seealso{
 \code{\link[=extract_pdf_content]{extract_pdf_content()}}, \code{\link[=parse_pdf_content]{parse_pdf_content()}}
-\code{\link[pdftools:pdftools]{pdftools::pdf_text()}}, \code{\link[pdftools:pdftools]{pdftools::pdf_data()}}
+\code{\link[pdftools:pdf_text]{pdftools::pdf_text()}}, \code{\link[pdftools:pdf_data]{pdftools::pdf_data()}}
 }

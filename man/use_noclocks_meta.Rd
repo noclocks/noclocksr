@@ -60,7 +60,7 @@ use_noclocks_meta(
 \item{...}{Additional arguments}
 }
 \value{
-HTML via \code{\link[htmltools:builder]{htmltools::tags()}} and \verb{<meta>} tags via
+HTML via \code{\link[htmltools:tags]{htmltools::tags()}} and \verb{<meta>} tags via
 \code{\link[metathis:meta]{metathis::meta()}}
 }
 \description{

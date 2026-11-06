@@ -44,103 +44,135 @@ export(write_log)
 import(htmltools)
 import(pkgdown)
 importFrom(assertthat,assert_that)
-importFrom(cli,ansi_strip)
-importFrom(cli,cat_line)
-importFrom(cli,cli_abort)
-importFrom(cli,cli_alert_info)
-importFrom(cli,cli_alert_success)
-importFrom(cli,cli_alert_warning)
-importFrom(cli,cli_bullets)
-importFrom(cli,cli_progress_bar)
-importFrom(cli,cli_progress_done)
-importFrom(cli,cli_progress_update)
-importFrom(cli,cli_warn)
-importFrom(cli,tree)
+importFrom(cli,
+  ansi_strip,
+  cat_line,
+  cli_abort,
+  cli_alert_info,
+  cli_alert_success,
+  cli_alert_warning,
+  cli_bullets,
+  cli_progress_bar,
+  cli_progress_done,
+  cli_progress_update,
+  cli_warn,
+  tree
+)
 importFrom(config,get)
-importFrom(covr,package_coverage)
-importFrom(covr,report)
+importFrom(covr,
+  package_coverage,
+  report
+)
 importFrom(covrpage,covrpage)
 importFrom(digest,digest)
-importFrom(dplyr,mutate)
-importFrom(dplyr,pull)
-importFrom(fs,dir_create)
-importFrom(fs,dir_exists)
-importFrom(fs,dir_info)
-importFrom(fs,dir_ls)
-importFrom(fs,file_create)
-importFrom(fs,file_exists)
-importFrom(fs,file_move)
-importFrom(fs,path)
-importFrom(fs,path_dir)
-importFrom(fs,path_ext)
-importFrom(fs,path_package)
-importFrom(gargle,gargle_oauth_client_from_json)
-importFrom(gargle,init_AuthState)
+importFrom(dplyr,
+  mutate,
+  pull
+)
+importFrom(fs,
+  dir_create,
+  dir_exists,
+  dir_info,
+  dir_ls,
+  file_create,
+  file_exists,
+  file_move,
+  path,
+  path_dir,
+  path_ext,
+  path_package
+)
+importFrom(gargle,
+  gargle_oauth_client_from_json,
+  init_AuthState
+)
 importFrom(gitdown,git_down)
 importFrom(glue,glue)
-importFrom(htmltools,HTML)
-importFrom(htmltools,htmlDependency)
-importFrom(htmltools,tagList)
-importFrom(htmltools,tags)
-importFrom(httr,GET)
-importFrom(httr,content)
-importFrom(httr2,req_auth_bearer_token)
-importFrom(httr2,req_headers)
-importFrom(httr2,req_method)
-importFrom(httr2,req_perform)
-importFrom(httr2,req_url_path_append)
-importFrom(httr2,request)
-importFrom(httr2,resp_body_json)
+importFrom(htmltools,
+  HTML,
+  htmlDependency,
+  tagList,
+  tags
+)
+importFrom(httr,
+  GET,
+  content
+)
+importFrom(httr2,
+  req_auth_bearer_token,
+  req_headers,
+  req_method,
+  req_perform,
+  req_url_path_append,
+  request,
+  resp_body_json
+)
 importFrom(jsonlite,fromJSON)
 importFrom(lubridate,weeks)
 importFrom(markdown,markdownToHTML)
-importFrom(metathis,meta)
-importFrom(metathis,meta_social)
+importFrom(metathis,
+  meta,
+  meta_social
+)
 importFrom(parallel,detectCores)
-importFrom(pdftools,pdf_data)
-importFrom(pdftools,pdf_text)
+importFrom(pdftools,
+  pdf_data,
+  pdf_text
+)
 importFrom(pkgdown,build_site)
 importFrom(pkgload,pkg_name)
-importFrom(purrr,map)
-importFrom(purrr,map_chr)
-importFrom(purrr,pluck)
-importFrom(purrr,pmap_chr)
-importFrom(purrr,pwalk)
-importFrom(rlang,abort)
-importFrom(rlang,cnd_entrace)
-importFrom(rlang,current_env)
-importFrom(rlang,entrace)
-importFrom(rlang,error_cnd)
-importFrom(rlang,trace_back)
-importFrom(stringr,boundary)
-importFrom(stringr,str_detect)
-importFrom(stringr,str_extract)
-importFrom(stringr,str_match)
-importFrom(stringr,str_replace)
-importFrom(stringr,str_replace_all)
-importFrom(stringr,str_to_lower)
-importFrom(stringr,str_trim)
+importFrom(purrr,
+  map,
+  map_chr,
+  pluck,
+  pmap_chr,
+  pwalk
+)
+importFrom(rlang,
+  abort,
+  cnd_entrace,
+  current_env,
+  entrace,
+  error_cnd,
+  trace_back
+)
+importFrom(stringr,
+  boundary,
+  str_detect,
+  str_extract,
+  str_match,
+  str_replace,
+  str_replace_all,
+  str_to_lower,
+  str_trim
+)
 importFrom(testdown,test_down)
 importFrom(tibble,tibble)
-importFrom(tibblify,tib_chr)
-importFrom(tibblify,tib_dbl)
-importFrom(tibblify,tib_df)
-importFrom(tibblify,tib_lgl)
-importFrom(tibblify,tib_row)
-importFrom(tibblify,tib_unspecified)
-importFrom(tibblify,tibblify)
-importFrom(tibblify,tspec_object)
+importFrom(tibblify,
+  tib_chr,
+  tib_dbl,
+  tib_df,
+  tib_lgl,
+  tib_row,
+  tib_unspecified,
+  tibblify,
+  tspec_object
+)
 importFrom(tidyr,unnest)
-importFrom(togglr,get_time_entries)
-importFrom(togglr,get_toggl_api_token)
-importFrom(togglr,set_toggl_api_token)
-importFrom(togglr,toggl_start)
-importFrom(togglr,toggl_stop)
+importFrom(togglr,
+  get_time_entries,
+  get_toggl_api_token,
+  set_toggl_api_token,
+  toggl_start,
+  toggl_stop
+)
 importFrom(usethis,use_news_md)
 importFrom(utils,assignInMyNamespace)
-importFrom(xml2,read_html)
-importFrom(xml2,xml_children)
-importFrom(xml2,xml_find_all)
-importFrom(xml2,xml_find_first)
-importFrom(xml2,xml_name)
-importFrom(xml2,xml_text)
+importFrom(xml2,
+  read_html,
+  xml_children,
+  xml_find_all,
+  xml_find_first,
+  xml_name,
+  xml_text
+)

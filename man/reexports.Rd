@@ -19,12 +19,12 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{cli}{\code{\link[cli]{ansi_strip}}, \code{\link[cli]{tree}}}
+  \item{cli}{\code{\link[cli:ansi_strip]{ansi_strip()}}, \code{\link[cli:tree]{tree()}}}
 
-  \item{digest}{\code{\link[digest]{digest}}}
+  \item{digest}{\code{\link[digest:digest]{digest()}}}
 
-  \item{parallel}{\code{\link[parallel]{detectCores}}}
+  \item{parallel}{\code{\link[parallel:detectCores]{detectCores()}}}
 
-  \item{rlang}{\code{\link[rlang]{abort}}, \code{\link[rlang:entrace]{cnd_entrace}}, \code{\link[rlang]{entrace}}, \code{\link[rlang:cnd]{error_cnd}}, \code{\link[rlang]{trace_back}}}
+  \item{rlang}{\code{\link[rlang:abort]{abort()}}, \code{\link[rlang:cnd_entrace]{cnd_entrace()}}, \code{\link[rlang:entrace]{entrace()}}, \code{\link[rlang:error_cnd]{error_cnd()}}, \code{\link[rlang:trace_back]{trace_back()}}}
 }}
 
