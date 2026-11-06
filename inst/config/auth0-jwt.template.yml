@@ -1,0 +1,9 @@
+# Copy to the ignored project-root config.yml, or merge into an existing config.
+# Populate environment variables through a secret manager or deployment settings.
+default:
+  auth0:
+    jwt_url: !expr Sys.getenv("AUTH0_JWT_URL")
+    client_id: !expr Sys.getenv("AUTH0_CLIENT_ID")
+    client_secret: !expr Sys.getenv("AUTH0_CLIENT_SECRET")
+    audience: !expr Sys.getenv("AUTH0_AUDIENCE")
+    grant_type: client_credentials

@@ -7,9 +7,30 @@ get_auth0_jwt <- function(
     rlang::abort("No Auth0 configuration found")
   }
 
-  httr2::curl_translate(
-    "curl --request POST --url https://jimbrig.us.auth0.com/oauth/token --header 'content-type: application/json' --data '{\"client_id\":\"tCLHUNuGdBXlaeZ94OrHfjVOUVuFPRte\",\"client_secret\":\"te2n7aYvXPYflth3OFMi8QK5c7obtjoJPNxfBfs1LKQIx2j9YfobR2rPKWsbEz-3\",\"audience\":\"https://auth-api.noclocks.dev\",\"grant_type\":\"client_credentials\"}'"
+  required_fields <- c(
+    "jwt_url", "client_id", "client_secret", "audience", "grant_type"
   )
+  if (!is.list(auth0_config)) {
+    rlang::abort("Auth0 configuration must be a named list")
+  }
+  invalid_fields <- required_fields[!vapply(
+    required_fields,
+    function(field) {
+      value <- auth0_config[[field]]
+      is.character(value) && length(value) == 1L &&
+        !is.na(value) && nzchar(trimws(value))
+    },
+    logical(1)
+  )]
+  if (length(invalid_fields) > 0L) {
+    rlang::abort(paste0(
+      "Auth0 configuration requires non-empty string values for: ",
+      paste(invalid_fields, collapse = ", ")
+    ))
+  }
+  if (!grepl("^https://[^/?#[:space:]]+", auth0_config$jwt_url)) {
+    rlang::abort("Auth0 jwt_url must use HTTPS")
+  }
 
   base_url <- auth0_config$jwt_url
   client_id <- auth0_config$client_id

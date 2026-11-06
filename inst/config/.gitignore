@@ -2,6 +2,7 @@
 !.gitignore
 !README.md
 !auth0.yml
+!auth0-jwt.template.yml
 !config.template.yml
 !credentials.template.json
 !keeper.config.template.json

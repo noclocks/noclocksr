@@ -1,5 +1,27 @@
 # Configurations
 
+## Auth0 JWT requests
+
+`get_auth0_jwt()` reads the `auth0` section of `config::get()`, or accepts an
+explicit configuration list with `jwt_url`, `client_id`, `client_secret`,
+`audience`, and `grant_type`. Existing lists with those fields remain supported.
+The token endpoint must use HTTPS, and every field must be a non-empty string.
+
+Copy `auth0-jwt.template.yml` to the ignored project-root `config.yml`, or merge
+its `auth0` section into an existing configuration. Populate `AUTH0_JWT_URL`,
+`AUTH0_CLIENT_ID`, `AUTH0_CLIENT_SECRET`, and `AUTH0_AUDIENCE` through your secret
+manager or deployment environment. The template uses the `client_credentials`
+grant. Do not commit populated configuration, environment files, or tokens.
+
+The separate `auth0.yml` template uses a different configuration structure and
+does not supply the fields required by `get_auth0_jwt()`.
+
+Source cleanup does not invalidate previously exposed secrets. Before rotating
+an application secret in Auth0, inventory its consumers and arrange secure
+configuration updates. After rotation, verify token issuance with the replacement
+and rejection of the old secret after propagation. Previously issued access
+tokens require a separate containment assessment until they expire.
+
 ## Integrations
 
 - Slack:
